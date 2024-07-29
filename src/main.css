@@ -1,0 +1,44 @@
+@import url(./styles/reset.css);
+@import url(./styles/global.css);
+
+h4,
+h5,
+h6,
+p,
+a,
+li,
+label {
+  color: var(--color-dark);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+    'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: var(--color-primary);
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+button {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
+    sans-serif;
+  transition: all ease-in-out 0.2s;
+  padding: 0.3rem 2rem;
+  width: fit-content;
+  border: var(--border-button);
+  border-radius: var(--border-button-radious);
+  box-shadow: var(--box-shadow-button);
+}
+
+button:hover {
+  background-color: var(--color-primary);
+  color: var(--color-gray);
+  box-shadow: none;
+  transition: all ease-in-out 0.2s;
+}

@@ -1,0 +1,30 @@
+/* Header */
+.Header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--color-dark);
+  height: 3rem;
+  z-index: 100;
+}
+
+.logo {
+  position: absolute;
+  right: 2rem;
+  top: 0.4rem;
+  height: 2.5rem;
+}
+
+/* Menu */
+.Menu {
+  width: 15rem;
+  z-index: 100;
+}
+
+.buttonMenu {
+  height: 3rem;
+  border-radius: 0;
+}
+
+.menu__bar {
+  margin-block-start: -1rem;
+}

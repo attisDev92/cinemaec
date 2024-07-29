@@ -1,0 +1,12 @@
+/* globals css */
+:root {
+  --color-primary: #be3144;
+  --color-secondary: #3a4750;
+  --color-dark: #303841;
+  --color-gray: #d3d6db;
+  --border-button-radious: 7px;
+  --border-button: none;
+  --box-shadow-button: 2px 0px 10px 1px;
+  --box-shadow-input: inset 2px 0px 5px 1px;
+  --box-shadow-card-background-dark: 5px 6px 0px;
+}

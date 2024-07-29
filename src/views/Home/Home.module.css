@@ -1,0 +1,40 @@
+/* Home section */
+.Home {
+  display: flex;
+  flex-flow: nowrap column;
+  gap: 2rem;
+}
+
+.video {
+  aspect-ratio: 16 / 9;
+}
+
+.parrafo {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* About */
+.About {
+  background-color: var(--color-primary);
+}
+
+.About h2 {
+  color: #ffffff;
+}
+
+.About p {
+  color: var(--color-gray);
+}
+
+/* Benefits */
+.BenefitsCard {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2rem;
+}
+
+.img {
+  width: 40%;
+  overflow: hidden;
+}
