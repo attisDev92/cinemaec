@@ -1,6 +1,7 @@
 import styles from '../Home.module.css'
 import Section from '../../../components/Section'
 import { Collapse, Divider } from 'antd'
+import { Link } from 'react-router-dom'
 
 const benefitsText = [
   {
@@ -43,12 +44,13 @@ const Benefits = () => {
     <div className={styles.Benefits}>
       <Section id="benefits">
         <h2>Beneficios</h2>
-        {benefitsText.map(benefit => (
+        {benefitsText.map((benefit, i) => (
           <>
-            <Divider key={benefit.title} orientation="left">
+            <Divider key={i} orientation="left">
               {benefit.title}
             </Divider>
             <Collapse
+              key={i + benefitsText.length}
               items={[
                 {
                   label: `${benefit.subtitle}`,
@@ -58,6 +60,9 @@ const Benefits = () => {
             />
           </>
         ))}
+        <Link to="/register" className="button-primary">
+          Regístrate
+        </Link>
       </Section>
     </div>
   )

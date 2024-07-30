@@ -1,10 +1,16 @@
 import Section from '../../../components/Section'
 import styles from '../Home.module.css'
+import logoRea from '../../../assets/icons/rea_logo_w.png'
 
 const About = () => {
   return (
     <div className={styles.About}>
       <Section id="about">
+        <img
+          className={styles.logo__rea}
+          src={logoRea}
+          alt="Red de Espacios Audiovisuales"
+        />
         <h2>Acerca de Nosotros</h2>
         <p>
           En la Red de Espacios Audiovisuales, nos dedicamos

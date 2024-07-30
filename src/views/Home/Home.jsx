@@ -3,7 +3,6 @@ import About from './components/About'
 import styles from './Home.module.css'
 import videoRea from '../../assets/videos/presentacionREA.mp4'
 import Contact from '../../components/Contact'
-import { HashRouter } from 'react-router-dom'
 import Benefits from './components/Benefits'
 
 const Home = () => {

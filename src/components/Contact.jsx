@@ -1,39 +1,13 @@
-import { Input } from 'antd'
-import { useField } from '../hooks'
 import styles from './Contact.module.css'
 import Section from './Section'
+import ContactForm from './ContactForm'
 
 const Contact = () => {
-  const name = useField('text')
-  const lastName = useField('text')
-  const organization = useField('text')
-  const message = useField('textarea')
-
-  const handleSubmit = e => {
-    e.preventDefault()
-  }
   return (
     <div className={styles.Contact}>
       <Section id="contact">
         <div className={styles.contact__container}>
-          <form
-            onSubmit={handleSubmit}
-            className={styles.form}
-          >
-            <label>Nombre:</label>
-            <Input type={name.type} />
-
-            <label>Apellido:</label>
-            <Input type={lastName.type} />
-
-            <label>Organización:</label>
-            <Input type={organization.type} />
-
-            <label>Mensaje:</label>
-            <Input type={message.type} />
-
-            <button type="submit">Enviar</button>
-          </form>
+          <ContactForm />
 
           <div className={styles.info__container}>
             <ul>

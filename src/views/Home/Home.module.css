@@ -16,6 +16,7 @@
 
 /* About */
 .About {
+  position: relative;
   background-color: var(--color-secondary);
 }
 
@@ -38,6 +39,13 @@
 
 .About li {
   padding: 0.5rem;
+}
+
+.logo__rea {
+  height: 6rem;
+  position: absolute;
+  top: 7rem;
+  right: 15%;
 }
 
 /* Benefits */
