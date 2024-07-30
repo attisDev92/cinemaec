@@ -1,0 +1,27 @@
+.Register {
+
+}
+
+.Register h2 {
+  width: fit-content;
+  height: 4rem;
+  padding: 0.6rem 5rem 1rem 1rem;
+  margin: 2rem 4rem;
+  font-size: 2rem;
+  color: var(--color-gray);
+  background-color: var(--color-primary);
+  box-shadow: var(--box-shadow-card-background-dark) var(--color-gray);
+}
+
+.Register p {
+  text-align: justify;
+}
+
+.requirements {
+  margin-top: 4rem;
+  height: 25rem;
+}
+
+.requirements li {
+  margin-top: 0.5rem;
+}
