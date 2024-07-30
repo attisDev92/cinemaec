@@ -1,7 +1,7 @@
 .Footer {
   padding: 2rem 10%;
   display: flex;
-  flex-flow: wrap row;
+  flex-flow: nowrap row;
   gap: 5rem;
   min-height: fit-content;
   background-color: var(--color-dark);
@@ -34,7 +34,13 @@
   flex-flow: column;
   gap: 1rem;
   font-size: 0.8rem;
-  padding: 2rem;
+  padding: 1rem;
   align-items: center;
   justify-content: flex-end;
+}
+
+.reference a {
+  text-align: center;
+  color: var(--color-gray);
+  cursor: pointer;
 }

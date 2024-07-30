@@ -16,15 +16,28 @@
 
 /* About */
 .About {
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
 }
 
 .About h2 {
-  color: #ffffff;
+  width: fit-content;
+  height: 4rem;
+  padding: 0.6rem 5rem 1rem 1rem;
+  margin: 2rem 4rem;
+  font-size: 2rem;
+  color: var(--color-gray);
+  background-color: var(--color-primary);
+  box-shadow: var(--box-shadow-card-background-dark) var(--color-gray);
 }
 
-.About p {
+.About p,
+.About li {
+  text-align: justify;
   color: var(--color-gray);
+}
+
+.About li {
+  padding: 0.5rem;
 }
 
 /* Benefits */

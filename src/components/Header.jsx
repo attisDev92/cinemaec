@@ -1,6 +1,7 @@
 import MenuContainer from './MenuContainer'
 import styles from './Header.module.css'
-import logoRea from '../../public/assets/icons/rea_logo_w.png'
+import logoRea from '../assets/icons/rea_logo_w.png'
+import logoIFCI from '../assets/icons/logo_ifci.png'
 
 const Header = () => {
   return (
@@ -9,6 +10,11 @@ const Header = () => {
         className={styles.logo}
         src={logoRea}
         alt="REA"
+      />
+      <img
+        className={styles.logo__ifci}
+        src={logoIFCI}
+        alt="IFCI"
       />
       <MenuContainer />
     </header>

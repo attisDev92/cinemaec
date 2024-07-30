@@ -38,7 +38,7 @@ const Contact = () => {
           <div className={styles.info__container}>
             <ul>
               <li>
-                Dirección:
+                Dirección: <br />
                 <a
                   href="https://maps.app.goo.gl/WRSKKHGnx3HxgfRK9"
                   target="_blank"
@@ -46,9 +46,12 @@ const Contact = () => {
                   Av. Atahualpa OE1-109 y Av. 10 de agosto
                 </a>
               </li>
-              <li>Teléfono: +593 2-393-1250</li>
               <li>
-                e-mail:
+                Teléfono: <br />
+                +593 2-393-1250
+              </li>
+              <li>
+                e-mail: <br />
                 <a href="mailto:audiovisuales.ifci@creatividad.gob.ec">
                   audiovisuales.ifci@creatividad.gob.ec
                 </a>

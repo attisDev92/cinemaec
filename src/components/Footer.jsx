@@ -7,8 +7,9 @@ import {
   InstagramOutlined,
   EnvironmentOutlined,
 } from '@ant-design/icons'
-import logoREA from '../../public/assets/icons/rea_logo_w.png'
-import logoIFCI from '../../public/assets/icons/logo_ifci.png'
+import logoREA from '../assets/icons/rea_logo_w.png'
+import logoIFCI from '../assets/icons/logo_ifci.png'
+import resolutionDocument from '../assets/downloads/IFCI-DE-2023-0024-R.pdf'
 
 const Footer = () => {
   return (
@@ -37,12 +38,16 @@ const Footer = () => {
         </li>
       </ul>
       <div className={styles.reference}>
-        <a>Reglamento Red de Espacios Audiovisuales</a>
-        <a>
+        <a href={resolutionDocument} target="_blank">
+          Reglamento Red de Espacios Audiovisuales
+        </a>
+        <a
+          href="https://www.creatividad.gob.ec"
+          target="_blank"
+        >
           Instituto de Fomento a la Creatividad y la
           Innovación
         </a>
-        <p>Desarrollado por AttisDev92</p>
       </div>
       <div className={styles.logos__container}>
         <div className={styles.logo}>

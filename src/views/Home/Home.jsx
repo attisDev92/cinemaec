@@ -1,14 +1,16 @@
 import Section from '../../components/Section'
 import About from './components/About'
 import styles from './Home.module.css'
-import videoRea from '../../../public/assets/videos/presentacionREA.mp4'
+import videoRea from '../../assets/videos/presentacionREA.mp4'
 import Contact from '../../components/Contact'
+import { HashRouter } from 'react-router-dom'
+import Benefits from './components/Benefits'
 
 const Home = () => {
   return (
     <>
       <Section id="home">
-        <div className={styles.Home}>
+        <main className={styles.Home}>
           <video
             className={styles.video}
             autoPlay
@@ -22,22 +24,22 @@ const Home = () => {
           <div className={styles.parrafo}>
             <h1>RED DE ESPACIOS AUDIOVISUALES</h1>
             <p>
-              Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Delectus necessitatibus,
-              voluptatibus dolorum ipsum asperiores sapiente
-              perferendis deleniti alias odit eum similique,
-              possimus ullam ab eos nostrum aperiam ratione.
-              Fugit, voluptatibus? Lorem ipsum dolor, sit
-              amet consectetur adipisicing elit.
-              Perspiciatis sequi impedit facere vitae
-              nostrum alias nemo labore aliquid recusandae
-              iure! Consectetur omnis necessitatibus, non
-              est odio quibusdam nemo doloremque nisi!
+              La Red de Espacios Audiovisuales -REA- es una
+              iniciativa que conecta espacios alternativos
+              de exhibición cinematográfica, tanto privados
+              como públicos, para ofrecer a la ciudadanía
+              acceso a una programación diversa y de
+              calidad. Esta red se presenta como una
+              alternativa innovadora al circuito comercial
+              de cine, promoviendo el uso de infraestructura
+              cultural y fortaleciendo la colaboración entre
+              gestores y usuarios del Banco de Contenidos.
             </p>
           </div>
-        </div>
+        </main>
       </Section>
       <About />
+      <Benefits />
       <Contact />
     </>
   )
