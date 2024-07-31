@@ -1,9 +1,10 @@
+import React from 'react'
 import Section from '../../components/Section'
 import About from './components/About'
 import styles from './Home.module.css'
-import videoRea from '../../assets/videos/presentacionREA.mp4'
-import Contact from '../../components/Contact'
+import Contact from './components/Contact'
 import Benefits from './components/Benefits'
+import videoURL from '../../assets/videos/introREA.mp4'
 
 const Home = () => {
   return (
@@ -17,9 +18,10 @@ const Home = () => {
             muted
             controls
           >
-            <source src={videoRea} type="video/mp4" />
+            <source src={videoURL} type="video/mp4" />
             Su navegador no soporta video
           </video>
+
           <div className={styles.parrafo}>
             <h1>RED DE ESPACIOS AUDIOVISUALES</h1>
             <p>

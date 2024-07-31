@@ -44,3 +44,32 @@
   color: var(--color-gray);
   cursor: pointer;
 }
+
+.rrss {
+  right: 5rem;
+}
+
+@media (max-width: 768px) {
+  .Footer {
+    padding: 2rem 5%;
+    gap: 1rem;
+    min-height: fit-content;
+  }
+
+  .rrss {
+    right: 2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .Footer {
+    padding: 1rem 5%;
+    flex-flow: wrap column;
+    gap: 2rem;
+  }
+
+  .rrss {
+    right: 1rem;
+  }
+
+}

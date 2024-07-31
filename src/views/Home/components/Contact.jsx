@@ -1,5 +1,5 @@
 import styles from './Contact.module.css'
-import Section from './Section'
+import Section from '../../../components/Section'
 import ContactForm from './ContactForm'
 
 const Contact = () => {

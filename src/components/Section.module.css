@@ -2,3 +2,17 @@
   padding-block: 5rem;
   padding-inline: 15%;
 }
+
+@media (max-width: 768px) {
+  .Section {
+    padding-block: 5rem;
+    padding-inline: 15%;
+  }
+}
+
+@media (max-width: 425px) {
+  .Section {
+    padding-block: 3rem;
+    padding-inline: 1%;
+  }
+}

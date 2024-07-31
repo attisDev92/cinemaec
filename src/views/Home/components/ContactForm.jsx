@@ -1,7 +1,7 @@
 import { Input } from 'antd'
-import { useField } from '../hooks/useField'
+import { useField } from '../../../hooks/useField'
 import styles from './Contact.module.css'
-import { useSubmitForm } from '../hooks/useSubmit'
+import { useSubmitForm } from '../../../hooks/useSubmit'
 
 const ContactForm = () => {
   const name = useField()

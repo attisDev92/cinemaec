@@ -1,13 +1,9 @@
 .Register {
-  
+  height: fit-content;
 }
 
-.Register h2 {
-  width: fit-content;
-  height: 4rem;
-  padding: 0.6rem 5rem 1rem 1rem;
-  margin: 2rem 4rem;
-  font-size: 2rem;
+.Register h2,
+.forms__container h2 {
   color: var(--color-gray);
   background-color: var(--color-primary);
   box-shadow: var(--box-shadow-card-background-dark) var(--color-gray);
@@ -15,6 +11,7 @@
 
 .Register p {
   text-align: justify;
+  padding: 1rem;
 }
 
 .requirements {
@@ -24,4 +21,41 @@
 
 .requirements li {
   margin-top: 0.5rem;
+}
+
+.forms__container {
+  margin-top: 3rem;
+}
+
+.forms {
+  height: 1000px;
+  width: 100%;
+}
+
+@media (max-width: 425px) {
+  .Register {
+    height: 55rem;
+  }
+  
+  .Register h2,
+  .forms__container h2 {
+    margin-left: 5rem;
+  }
+  
+  .requirements {
+    margin-top: 4rem;
+    height: 25rem;
+  }
+  
+  .forms {
+    height: 600px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  .Register {
+    height: 80rem;
+  }
+  
 }

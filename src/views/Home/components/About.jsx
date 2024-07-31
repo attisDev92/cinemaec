@@ -1,6 +1,5 @@
 import Section from '../../../components/Section'
 import styles from '../Home.module.css'
-import logoRea from '../../../assets/icons/rea_logo_w.png'
 
 const About = () => {
   return (
@@ -8,7 +7,7 @@ const About = () => {
       <Section id="about">
         <img
           className={styles.logo__rea}
-          src={logoRea}
+          src="/assets/icons/rea_logo_w.png"
           alt="Red de Espacios Audiovisuales"
         />
         <h2>Acerca de Nosotros</h2>

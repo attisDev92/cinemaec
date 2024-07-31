@@ -7,9 +7,6 @@ import {
   InstagramOutlined,
   EnvironmentOutlined,
 } from '@ant-design/icons'
-import logoREA from '../assets/icons/rea_logo_w.png'
-import logoIFCI from '../assets/icons/logo_ifci.png'
-import resolutionDocument from '../assets/downloads/IFCI-DE-2023-0024-R.pdf'
 
 const Footer = () => {
   return (
@@ -38,7 +35,10 @@ const Footer = () => {
         </li>
       </ul>
       <div className={styles.reference}>
-        <a href={resolutionDocument} target="_blank">
+        <a
+          href="/public/assets/downloads/IFCI-DE-2023-0024-R.pdf"
+          target="_blank"
+        >
           Reglamento Red de Espacios Audiovisuales
         </a>
         <a
@@ -51,18 +51,22 @@ const Footer = () => {
       </div>
       <div className={styles.logos__container}>
         <div className={styles.logo}>
-          <img src={logoREA} alt="REA" />
+          <img
+            src="/assets/icons/rea_logo_w.png"
+            alt="REA"
+          />
         </div>
         <div className={styles.logo}>
-          <img src={logoIFCI} alt="IFCI" />
+          <img
+            src="/assets/icons/logo_ifci.png"
+            alt="IFCI"
+          />
         </div>
       </div>
       <FloatButton.Group
+        className={styles.rrss}
         trigger="hover"
         type="primary"
-        style={{
-          right: 94,
-        }}
         icon={<InfoCircleOutlined />}
       >
         <FloatButton
