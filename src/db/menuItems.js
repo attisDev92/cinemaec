@@ -13,7 +13,7 @@ export const menuItems = [
   },
   {
     name: 'Catálogo',
-    path: '/movies',
+    path: '/cataloge',
     icon: CollectionsIcon,
   },
   {

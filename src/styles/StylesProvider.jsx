@@ -12,6 +12,14 @@ const theme = createTheme({
       main: '#3a4750',
     },
   },
+  typography: {
+    fontFamily: [
+      'Verdana',
+      'Geneva',
+      'Tahoma',
+      'sans-serif',
+    ].join(','),
+  },
 })
 
 export default function StyleProvider(props) {
