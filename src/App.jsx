@@ -7,6 +7,7 @@ import BadRequest from './components/BadRequest'
 import ReaRoutes from './routes/ReaRoutes'
 import Contact from './components/Contact'
 import MoviesCataloge from './views/MoviesGallery/MoviesCataloge'
+import MovieLayout from './views/MoviesGallery/MovieLayout'
 
 function App() {
   return (
@@ -17,6 +18,10 @@ function App() {
         <Route
           path="/cataloge"
           element={<MoviesCataloge />}
+        />
+        <Route
+          path="/cataloge/:id"
+          element={<MovieLayout />}
         />
         <Route path="/contact" element={<Contact />} />
         <Route path="/" element={<Home />} />
