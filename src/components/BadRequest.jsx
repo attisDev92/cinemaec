@@ -1,24 +1,25 @@
-import { Button, Result } from 'antd'
 import { useNavigate } from 'react-router-dom'
-import '../styles/global.css'
+import '../main.css'
+import { Card, Button } from '@mui/material'
 
 const BadRequest = () => {
   const navigate = useNavigate()
+
   return (
-    <Result
-      style={{ padding: '5rem' }}
-      status="404"
-      title="404"
-      subTitle="ERROR, la página a la que intenta ingresar no existe"
-      extra={
-        <Button
-          type="primary"
-          onClick={() => navigate('/')}
-        >
-          Regresar al inicio
-        </Button>
-      }
-    />
+    <div className="not-found__container">
+      <Card>
+        <img src="/assets/404.png" />
+      </Card>
+      <h5>
+        ERROR, la página a la que intenta ingresar no existe
+      </h5>
+      <Button
+        variant="contained"
+        onClick={() => navigate('/')}
+      >
+        Regresar al inicio
+      </Button>
+    </div>
   )
 }
 

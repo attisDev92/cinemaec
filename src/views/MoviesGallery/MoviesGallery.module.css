@@ -1,0 +1,86 @@
+.Gallery {
+  position: relative;
+  width: 100vw;
+  padding-block: 4rem;
+  background-color: var(--color-dark);
+}
+
+.Gallery h2 {
+  position: absolute;
+  right: 2rem;
+  width: fit-content;
+  height: 4rem;
+  padding: 0.6rem 5rem 1rem 1rem;
+  margin-inline: 4rem;
+  font-size: 2rem;
+  background-color: var(--color-gray);
+  box-shadow: var(--box-shadow-card-background-dark);
+}
+
+.movies__container {
+  display: flex;
+  margin-top: 8rem;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+  align-content: space-around;
+  justify-content: center;
+}
+
+/* movie card component */
+
+.movie__card {
+  display: flex;
+  flex-flow: row nowrap;
+  aspect-ratio: 19 / 9;
+  width: 27rem;
+  height: auto;
+  gap: 1rem;
+  margin: 1rem;
+  background-color: var(--color-gray);
+  box-shadow: 10px 10px 0px var(--color-primary);
+}
+
+.card__image {
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  width: 30%;
+}
+
+.card__image img {
+  height: 100%;
+  width: auto;
+}
+
+.card__content {
+  position: relative;
+  width: 60%;
+  padding: 1.5rem 0.5rem;
+}
+
+.card__content button {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
+/* movie display */
+.MovieView {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 6rem 20%;
+  background-color: var(--color-gray);
+  z-index: 3;
+}
+
+.MovieView__disable {
+  display: none;
+}
+
+.movie__header {
+}
+
+.movie__header h3 {
+  font-size: 3rem;
+}

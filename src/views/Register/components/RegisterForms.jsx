@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import styles from '../Register.module.css'
-import { Tabs } from 'antd'
+import { Tab, Tabs, Box } from '@mui/material'
+import CustomTabPanel from './CustomTabPanel'
 
 const forms = [
   {
@@ -13,6 +15,12 @@ const forms = [
 ]
 
 const RegisterForms = () => {
+  const [value, setValue] = useState(0)
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue)
+  }
+
   return (
     <div className={styles.forms__container}>
       <h2>Formulario de Registro</h2>
@@ -23,24 +31,31 @@ const RegisterForms = () => {
         información proporcionada para completar el
         registro.
       </p>
-      <Tabs
-        tabPosition="top"
-        items={forms.map((form, i) => {
-          const id = String(i + 1)
-          return {
-            label: `${form.title}`,
-            key: id,
-            children: (
-              <iframe
-                className={`airtable-embed ${styles.forms}`}
-                src={form.src}
-                frameborder="0"
-                onmousewheel=""
-              ></iframe>
-            ),
-          }
-        })}
-      />
+      <Box sx={{ width: '100%' }}>
+        <Box
+          sx={{ borderBottom: 1, borderColor: 'divider' }}
+        >
+          <Tabs
+            value={value}
+            aria-label="wrapped label tabs example"
+            onChange={handleChange}
+          >
+            {forms.map((item, i) => (
+              <Tab value={i} label={item.title} wrapped />
+            ))}
+          </Tabs>
+        </Box>
+        {forms.map((item, i) => (
+          <CustomTabPanel value={value} index={i}>
+            <iframe
+              className={`airtable-embed ${styles.forms}`}
+              src={item.src}
+              frameborder="0"
+              onmousewheel=""
+            ></iframe>
+          </CustomTabPanel>
+        ))}
+      </Box>
     </div>
   )
 }

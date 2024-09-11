@@ -1,16 +1,15 @@
 import React from 'react'
 import Section from '../../components/Section'
 import About from './components/About'
-import styles from './Home.module.css'
-import Contact from './components/Contact'
+import styles from './Rea.module.css'
 import Benefits from './components/Benefits'
 import videoURL from '../../assets/videos/introREA.mp4'
 
-const Home = () => {
+const Rea = () => {
   return (
     <>
-      <Section id="home">
-        <main className={styles.Home}>
+      <Section id="rea">
+        <main className={styles.rea}>
           <video
             className={styles.video}
             autoPlay
@@ -41,9 +40,8 @@ const Home = () => {
       </Section>
       <About />
       <Benefits />
-      <Contact />
     </>
   )
 }
 
-export default Home
+export default Rea

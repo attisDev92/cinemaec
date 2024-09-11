@@ -1,70 +1,17 @@
 import Section from '../../components/Section'
 import RegisterForms from './components/RegisterForms'
 import styles from './Register.module.css'
-import { Tabs } from 'antd'
-import { useEffect, useState } from 'react'
-
-const requirements = [
-  {
-    type: 'Personas Jurídicas - Espacios',
-    requirementsDetails: [
-      'Registro mediante formulario en línea (formato expedido por el IFCI).',
-      'Tres fotografías del espacio: pantalla o monitor, butacas y vista general.',
-      'Imagen del logo, nombre comercial o marca.',
-      'Documento de autorización que acredite al registrante como director/administrador/coordinador/presidente o propietario del espacio.',
-      'Registro Único de Contribuyentes (RUC) vigente.',
-      'Documento que constate la ubicación exacta del espacio (planilla de servicio básico, pago de impuesto predial, contrato de arrendamiento, convenio de uso, comodato, título de propiedad, etc.).',
-      'Copia del nombramiento del representante legal debidamente legalizado.',
-    ],
-  },
-  {
-    type: 'Personas Jurídicas – Gestores',
-    requirementsDetails: [
-      'Registro mediante formulario en línea (formato expedido por el IFCI).',
-      'Imagen del logo, nombre comercial o marca.',
-      'Registro Único de Contribuyentes (RUC) vigente.',
-      'Copia del nombramiento del representante legal debidamente legalizado.',
-    ],
-  },
-  {
-    type: 'Personas Naturales – Espacios',
-    requirementsDetails: [
-      'Registro mediante formulario en línea (formato IFCI).',
-      'Tres fotografías del espacio: pantalla o monitor, butacas y vista general.',
-      'Documento de autorización que acredite al registrante como director/administrador/coordinador/presidente o propietario del espacio.',
-      'Documento que constate la ubicación exacta del espacio (planilla de servicio básico, pago de impuesto predial, contrato de arrendamiento, convenio de uso, comodato, título de propiedad, etc.).',
-    ],
-  },
-  {
-    type: 'Personas Naturales – Gestores',
-    requirementsDetails: [
-      'Registro mediante formulario en línea (formato IFCI).',
-      'Una fotografía del gestor cultural solicitante.',
-      'Certificado del RUAC (opcional).',
-    ],
-  },
-]
+import { useState } from 'react'
+import { requirements } from '../../db/requirements'
+import { Tab, Tabs, Box } from '@mui/material'
+import CustomTabPanel from './components/CustomTabPanel'
 
 const Register = () => {
-  const [orientationTab, setOrientationTab] =
-    useState('left')
+  const [value, setValue] = useState(0)
 
-  useEffect(() => {
-    const handleResize = () => {
-      const displayWidth = window.innerWidth
-      if (displayWidth > 770) {
-        setOrientationTab('left')
-      } else {
-        setOrientationTab('top')
-      }
-    }
-    window.addEventListener('resize', handleResize)
-    handleResize()
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+  const handleChange = (event, newValue) => {
+    setValue(newValue)
+  }
 
   return (
     <Section id="register">
@@ -80,27 +27,26 @@ const Register = () => {
           voluntariamente unirse a la Red, integrando lo
           público, lo privado y lo asociativo.
         </p>
-
-        <Tabs
-          className={styles.requirements}
-          tabPosition={orientationTab}
-          items={requirements.map((requirement, i) => {
-            const id = String(i + 1)
-            return {
-              label: requirement.type,
-              key: id,
-              children: (
-                <ol>
-                  {requirement.requirementsDetails.map(
-                    (detail, index) => (
-                      <li key={index}>{detail}</li>
-                    ),
-                  )}
-                </ol>
-              ),
-            }
-          })}
-        />
+        <Box sx={{ width: '100%' }}>
+          <Box
+            sx={{ borderBottom: 1, borderColor: 'divider' }}
+          >
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              aria-label="wrapped label tabs example"
+            >
+              {requirements.map((item, i) => (
+                <Tab value={i} label={item.title} wrapped />
+              ))}
+            </Tabs>
+          </Box>
+          {requirements.map((item, i) => (
+            <CustomTabPanel value={value} index={i}>
+              {item.text}
+            </CustomTabPanel>
+          ))}
+        </Box>
       </div>
       <RegisterForms />
     </Section>

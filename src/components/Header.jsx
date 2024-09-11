@@ -1,5 +1,5 @@
-import MenuContainer from './MenuContainer'
 import styles from './Header.module.css'
+import Menu from './Menu'
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
         src="/assets/icons/logo_ifci.png"
         alt="IFCI"
       />
-      <MenuContainer />
+      <Menu />
     </header>
   )
 }

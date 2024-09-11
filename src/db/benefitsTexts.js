@@ -1,9 +1,4 @@
-import styles from '../Home.module.css'
-import Section from '../../../components/Section'
-import { Collapse, Divider } from 'antd'
-import { Link } from 'react-router-dom'
-
-const benefitsText = [
+export const benefitsText = [
   {
     title: 'Acceso al Banco de Contenidos',
     subtitle: 'Disfruta del Banco de Contenidos del IFCI',
@@ -38,34 +33,3 @@ const benefitsText = [
     text: 'Participa en convocatorias diseñadas para fomentar la activación y el impulso de la REA. Estas oportunidades pueden incluir financiamiento, apoyo logístico y recursos adicionales que fortalecerán tu espacio y sus actividades.',
   },
 ]
-
-const Benefits = () => {
-  return (
-    <div className={styles.Benefits}>
-      <Section id="benefits">
-        <h2>Beneficios</h2>
-        {benefitsText.map((benefit, i) => (
-          <>
-            <Divider key={i} orientation="left">
-              {benefit.title}
-            </Divider>
-            <Collapse
-              key={i + benefitsText.length}
-              items={[
-                {
-                  label: `${benefit.subtitle}`,
-                  children: <p>{benefit.text}</p>,
-                },
-              ]}
-            />
-          </>
-        ))}
-        <Link to="/register" className="button-primary">
-          Regístrate
-        </Link>
-      </Section>
-    </div>
-  )
-}
-
-export default Benefits

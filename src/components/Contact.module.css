@@ -1,5 +1,7 @@
 .Contact {
+  height: 85vh;
   background-color: var(--color-dark);
+  padding-top: 10%;
 }
 
 .contact__container {
@@ -30,18 +32,18 @@
   border-inline-start: 2px solid var(--color-gray);
 }
 
-@media (max-width: 768px) {  
+@media (max-width: 768px) {
   .contact__container {
     flex-flow: row;
     justify-content: center;
     gap: 1rem;
   }
-  
+
   .form {
     width: 60%;
     gap: 0.5rem;
   }
-  
+
   .info__container {
     margin-inline-start: 1rem;
     border-inline-start: 2px solid var(--color-gray);
@@ -49,7 +51,6 @@
 }
 
 @media (max-width: 425px) {
-  
   .contact__container {
     display: flex;
     flex-flow: column;
@@ -61,7 +62,7 @@
     padding: 2rem;
     gap: 1rem;
   }
-  
+
   .info__container {
     margin-inline-start: 0;
   }

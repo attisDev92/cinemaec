@@ -29,7 +29,8 @@ h1 {
   margin: 0.5rem auto;
   color: var(--color-gray);
   background-color: var(--color-secondary);
-  box-shadow: var(--box-shadow-card-background-dark) var(--color-primary);
+  box-shadow: var(--box-shadow-card-background-dark)
+    var(--color-primary);
 }
 
 h2 {
@@ -42,7 +43,7 @@ h2 {
 }
 
 .button-secondary {
-  font-family:var(--font-family-button);
+  font-family: var(--font-family-button);
   padding: 0.3rem 2rem;
   width: fit-content;
   border: var(--border-button);
@@ -78,6 +79,12 @@ h2 {
   transition: all 0.3s;
 }
 
+.not-found__container {
+  height: 80vh;
+  padding: 10rem 30%;
+  margin: 1rem auto;
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 1.5rem;
@@ -89,7 +96,6 @@ h2 {
     font-size: 1.6rem;
     height: 3rem;
   }
-
 }
 
 @media (max-width: 425px) {
@@ -107,7 +113,6 @@ h2 {
 }
 
 @media (max-width: 320px) {
-
   h2 {
     font-size: 1rem;
     height: 1.5rem;

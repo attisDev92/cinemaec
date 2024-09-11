@@ -1,5 +1,5 @@
-/* Home section */
-.Home {
+/* rea section */
+.rea {
   display: flex;
   flex-flow: nowrap column;
   gap: 2rem;
@@ -9,7 +9,7 @@
   aspect-ratio: 16 / 9;
 }
 
-.Home h1 {
+.rea h1 {
   margin-bottom: 1rem;
 }
 
@@ -27,7 +27,8 @@
 .About h2 {
   color: var(--color-gray);
   background-color: var(--color-primary);
-  box-shadow: var(--box-shadow-card-background-dark) var(--color-gray);
+  box-shadow: var(--box-shadow-card-background-dark)
+    var(--color-gray);
 }
 
 .About p,
@@ -50,22 +51,23 @@
 .Benefits h2 {
   color: var(--color-gray);
   background-color: var(--color-secondary);
-  box-shadow: var(--box-shadow-card-background-dark) var(--color-primary);
+  box-shadow: var(--box-shadow-card-background-dark)
+    var(--color-primary);
 }
 
 @media (max-width: 768px) {
   .Home {
     gap: 1rem;
   }
-  
+
   .parrafo {
     padding: 1rem;
   }
-  
+
   .About li {
     padding: 0;
   }
-  
+
   .logo__rea {
     height: 3.5rem;
     position: absolute;
@@ -76,7 +78,7 @@
   .Home {
     gap: 1rem;
   }
-  
+
   .logo__rea {
     display: none;
   }
@@ -86,4 +88,3 @@
     padding: 0.5rem 2rem;
   }
 }
-

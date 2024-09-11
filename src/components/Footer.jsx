@@ -1,12 +1,6 @@
 import styles from './Footer.module.css'
 import { Link } from 'react-router-dom'
-import { FloatButton } from 'antd'
-import {
-  InfoCircleOutlined,
-  FacebookOutlined,
-  InstagramOutlined,
-  EnvironmentOutlined,
-} from '@ant-design/icons'
+import SocialSpeedDial from './SocialSpeedDial'
 
 const Footer = () => {
   return (
@@ -63,28 +57,7 @@ const Footer = () => {
           />
         </div>
       </div>
-      <FloatButton.Group
-        className={styles.rrss}
-        trigger="hover"
-        type="primary"
-        icon={<InfoCircleOutlined />}
-      >
-        <FloatButton
-          target="_blank"
-          href="https://www.facebook.com/Creatividad.Ec"
-          icon={<FacebookOutlined />}
-        />
-        <FloatButton
-          target="_blank"
-          href="https://www.instagram.com/creatividad_ec/?hl=es"
-          icon={<InstagramOutlined />}
-        />
-        <FloatButton
-          target="_blank"
-          href="https://maps.app.goo.gl/WRSKKHGnx3HxgfRK9"
-          icon={<EnvironmentOutlined />}
-        />
-      </FloatButton.Group>
+      <SocialSpeedDial />
     </footer>
   )
 }

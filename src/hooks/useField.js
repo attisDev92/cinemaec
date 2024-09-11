@@ -3,7 +3,7 @@ import { useState } from 'react'
 export const useField = (type = 'text') => {
   const [value, setValue] = useState('')
 
-  const onChange = (event) => {
+  const onChange = event => {
     setValue(event.target.value)
   }
 
@@ -18,5 +18,6 @@ export const useField = (type = 'text') => {
       onChange,
     },
     reset,
+    value,
   }
 }
