@@ -4,9 +4,8 @@ import styles from '../MoviesGallery.module.css'
 
 const MovieCard = ({ movie }) => {
   const navigate = useNavigate()
-  console.log(movie)
   const poster = useImageContent(movie.poster.url)
-  console.log(poster)
+
   const handleClickMovie = () => {
     navigate(`/cataloge/movie/${movie.id}`)
   }
@@ -16,9 +15,6 @@ const MovieCard = ({ movie }) => {
       className={styles.movie__card}
       onClick={handleClickMovie}
     >
-      <div className={styles.movie__poster}>
-        <img src={poster} alt={`${movie.title}_poster`} />
-      </div>
       <div className={styles.movie__details}>
         <div>
           <h3>{movie.title.toUpperCase()}</h3>
@@ -32,6 +28,9 @@ const MovieCard = ({ movie }) => {
           <p>{movie.runTime}</p>
         </div>
         <p>{movie.storyLine}</p>
+      </div>
+      <div className={styles.movie__poster}>
+        <img src={poster} alt={`${movie.title}_poster`} />
       </div>
     </div>
   )

@@ -6,11 +6,11 @@ const Home = () => {
       <h1>CINEMA EC</h1>
       <h2>El catálogo del cine ecuatoriano</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Dolores blanditiis, non vitae accusamus,
-        excepturi est harum ullam, mollitia aut enim
-        reiciendis. Corporis tempora velit possimus quos
-        dolorum voluptatibus illum sed!
+        Aquí encontrarás el castálogo de películas del cine
+        ecuatoriano, además, encontrarás las películas que
+        son parte del Banco de Contenidos del IFCI y son de
+        acceso gratuito para miembros de la Red de Espacios
+        Audiovisuales y Usuarios del Banco de Contenidos.
       </p>
     </div>
   )

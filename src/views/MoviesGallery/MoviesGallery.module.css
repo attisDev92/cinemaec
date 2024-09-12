@@ -26,14 +26,13 @@
 }
 
 /* movie card component */
-
 .movie__card {
   display: flex;
   flex-flow: row nowrap;
-  background-color: var(--color-gray);
-  width: 30rem;
+  width: 35rem;
   height: 15rem;
-  box-shadow: 5px 6px 0px;
+  box-shadow: 2px 2px 3px;
+  background-color: var(--color-gray);
 }
 
 .movie__card:hover {
@@ -42,17 +41,19 @@
 }
 
 .movie__poster {
-  width: 20rem;
+  width: 15rem;
   aspect-ratio: 9 / 16;
   overflow: hidden;
 }
 
 .movie__poster img {
   height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .movie__details {
-  padding: 1rem 2rem;
+  padding: 2rem 2rem 1rem;
   display: flex;
   flex-flow: column;
   gap: 1rem;
@@ -62,4 +63,102 @@
   display: flex;
   flex-flow: row nowrap;
   gap: 1rem;
+}
+
+/* movie layout */
+.movie__layout {
+  padding-top: 2rem;
+  height: 100%;
+}
+
+.layout__header {
+  position: relative;
+  margin-bottom: 20rem;
+}
+
+.layout__banner {
+  height: 25rem;
+  width: 100vw;
+}
+
+.layout__banner img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.layout__header h1 {
+  position: absolute;
+  top: 15rem;
+  left: 25rem;
+}
+
+.layout__storyline {
+  position: absolute;
+  top: 20rem;
+  left: 26rem;
+  text-shadow: white 1px 1px 1px;
+}
+
+.layout__poster {
+  width: 15rem;
+  aspect-ratio: 7 / 10;
+  overflow: hidden;
+  position: absolute;
+  top: 15rem;
+  left: 5rem;
+}
+
+.layout__poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.layout__plot {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  position: absolute;
+  margin-top: 2rem;
+  left: 22rem;
+  padding: 2rem;
+  width: 50%;
+  height: fit-content;
+  background-color: var(--color-dark);
+  box-shadow: 10px 10px 0px var(--color-primary);
+}
+
+.layout__plot p {
+  color: var(--color-gray);
+}
+
+.layout__technical {
+  position: relative;
+  padding: 2rem 10%;
+}
+
+.container__trailer__cast {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: var(--color-dark);
+  padding: 2rem 10%;
+  gap: 2rem;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+.layout__trailer {
+  width: 60%;
+  aspect-ratio: 16 /9;
+}
+
+.layout__cast h5,
+.layout__cast li {
+  color: white;
+}
+
+.layout__stills {
+  background-color: var(--color-primary);
+  padding: 1rem 10%;
 }
