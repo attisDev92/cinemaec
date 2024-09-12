@@ -19,9 +19,9 @@
 
 .movies__container {
   display: flex;
-  margin-top: 8rem;
+  margin-top: 9rem;
   flex-flow: row wrap;
-  gap: 0.5rem;
+  gap: 2rem;
   align-content: space-around;
   justify-content: center;
 }
@@ -31,56 +31,37 @@
 .movie__card {
   display: flex;
   flex-flow: row nowrap;
-  aspect-ratio: 19 / 9;
-  width: 27rem;
-  height: auto;
-  gap: 1rem;
-  margin: 1rem;
   background-color: var(--color-gray);
+  width: 30rem;
+  box-shadow: 5px 6px 0px;
+}
+
+.movie__card:hover {
+  scale: 1.01;
   box-shadow: 10px 10px 0px var(--color-primary);
 }
 
-.card__image {
+.movie__poster {
+  width: 30%;
   aspect-ratio: 9 / 16;
   overflow: hidden;
-  width: 30%;
 }
 
-.card__image img {
+.movie__poster img {
   height: 100%;
-  width: auto;
+  width: 100%;
 }
 
-.card__content {
-  position: relative;
+.movie__details {
   width: 60%;
-  padding: 1.5rem 0.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
 }
 
-.card__content button {
-  position: absolute;
-  bottom: 0.5rem;
-  right: 0.5rem;
-}
-
-/* movie display */
-.MovieView {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  padding: 6rem 20%;
-  background-color: var(--color-gray);
-  z-index: 3;
-}
-
-.MovieView__disable {
-  display: none;
-}
-
-.movie__header {
-}
-
-.movie__header h3 {
-  font-size: 3rem;
+.movie__data {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
 }

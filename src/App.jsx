@@ -35,7 +35,7 @@ const App = () => {
           element={<MoviesCataloge />}
         />
         <Route
-          path="/cataloge/:id"
+          path="/cataloge/movie/:id"
           element={<MovieLayout />}
         />
         <Route path="/contact" element={<Contact />} />
