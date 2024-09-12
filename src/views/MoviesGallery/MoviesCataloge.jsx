@@ -4,7 +4,7 @@ const movies = []
 
 const MoviesCataloge = () => {
   return (
-    <div className={styles.Gallery}>
+    <div className={styles.gallery}>
       <h2>Banco de Contenidos</h2>
       <div className={styles.movies__container}>
         {movies.map(movie => (

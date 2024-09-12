@@ -1,11 +1,11 @@
-.Gallery {
+.gallery {
   position: relative;
   width: 100vw;
   padding-block: 4rem;
   background-color: var(--color-dark);
 }
 
-.Gallery h2 {
+.gallery h2 {
   position: absolute;
   right: 2rem;
   width: fit-content;
