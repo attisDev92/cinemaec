@@ -5,7 +5,7 @@ import styles from '../MoviesGallery.module.css'
 const MovieCard = ({ movie }) => {
   const navigate = useNavigate()
   console.log(movie)
-  const poster = useImageContent(movie.poster.id)
+  const poster = useImageContent(movie.poster.url)
   console.log(poster)
   const handleClickMovie = () => {
     navigate(`/cataloge/movie/${movie.id}`)
