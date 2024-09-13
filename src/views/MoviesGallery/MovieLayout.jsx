@@ -7,6 +7,7 @@ import TechnicalSheet from './components/TechnicalSheet'
 import TechnicalTeam from './components/TechnicalTeam'
 import styles from './MoviesGallery.module.css'
 import { ImageList, ImageListItem } from '@mui/material'
+import MovieTrailer from './components/MovieTrailer'
 
 const MovieLayout = () => {
   const { id } = useParams()
@@ -15,6 +16,9 @@ const MovieLayout = () => {
   const [error, setError] = useState(null)
   const poster = useImageContent(movie?.poster.url)
   const banner = useImageContent(movie?.stills[0]?.url)
+  const [stillIsVisible, setStillStillVisible] =
+    useState(false)
+  const [still, setStill] = useState(null)
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -34,18 +38,22 @@ const MovieLayout = () => {
   if (loading) return <Loader isActive={true} />
   if (error) return <p>{error}</p>
 
+  const renderStill = id => {
+    const stillSelected = movie.stills.find(
+      still => still.id === id,
+    )
+    setStillStillVisible(!stillIsVisible)
+    setStill(stillSelected)
+  }
   console.log(movie)
 
   return (
     <div className={styles.movie__layout}>
       <div className={styles.layout__header}>
         <div className={styles.layout__banner}>
-          <img url={banner} alt={`${movie.title}_banner`} />
+          <img src={banner} alt={`${movie.title}_banner`} />
         </div>
         <h1>{movie.title}</h1>
-        <p className={styles.layout__storyline}>
-          {movie.storyLine}
-        </p>
         <div className={styles.layout__poster}>
           <img src={poster} alt={`${movie.title}_poster`} />
         </div>
@@ -66,16 +74,9 @@ const MovieLayout = () => {
       </div>
       <div className={styles.container__trailer__cast}>
         {movie.trailer && (
-          <div className={styles.layout__trailer}>
-            <iframe
-              src={movie.trailer}
-              title={`${movie.title}_trailer`}
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
+          <MovieTrailer trailerUrl={movie.trailer} />
         )}
+
         <div className={styles.layout__cast}>
           <h5>Casting</h5>
           {movie?.cast && movie.cast.length > 0 ? (
@@ -92,13 +93,17 @@ const MovieLayout = () => {
       {movie.stills?.length > 0 && (
         <div className={styles.layout__stills}>
           <ImageList
+            sx={{ width: 500, height: 450 }}
             variant="quilted"
             cols={4}
             rowHeight={121}
           >
             {movie.stills.map(still => (
               <ImageListItem key={still.id}>
-                <img src={still.url} />
+                <img
+                  onClick={() => renderStill(still.id)}
+                  src={still.url}
+                />
               </ImageListItem>
             ))}
           </ImageList>
@@ -108,6 +113,14 @@ const MovieLayout = () => {
       <div className={styles.layout__technical}>
         <TechnicalTeam team={movie.technicalTeam} />
       </div>
+      {stillIsVisible && (
+        <div
+          className={styles.stillViewer}
+          onClick={() => renderStill()}
+        >
+          <img src={still} />
+        </div>
+      )}
     </div>
   )
 }

@@ -89,15 +89,8 @@
 
 .layout__header h1 {
   position: absolute;
-  top: 15rem;
-  left: 25rem;
-}
-
-.layout__storyline {
-  position: absolute;
-  top: 20rem;
-  left: 26rem;
-  text-shadow: white 1px 1px 1px;
+  top: 18rem;
+  left: 22rem;
 }
 
 .layout__poster {
@@ -143,8 +136,7 @@
   flex-flow: row wrap;
   background-color: var(--color-dark);
   padding: 2rem 10%;
-  gap: 2rem;
-  align-items: flex-end;
+  gap: 5rem;
   justify-content: space-evenly;
 }
 
@@ -161,4 +153,11 @@
 .layout__stills {
   background-color: var(--color-primary);
   padding: 1rem 10%;
+}
+
+.stillViewer {
+  position: fixed;
+  top: 20%;
+  padding: 20%;
+  z-index: 100;
 }
