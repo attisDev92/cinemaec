@@ -69,7 +69,7 @@ const StillsGallery = ({ stills }) => {
           <div
             className={styles.background__still}
             onClick={closeSelectedStill}
-          ></div>
+          />
         </div>
       )}
     </>
