@@ -3,7 +3,6 @@ import imageDefault from '../assets/img/no_image.jpg'
 
 export const useImageContent = url => {
   const [imageUrl, setImageUrl] = useState(imageDefault)
-  console.log(url)
 
   useEffect(() => {
     if (url && url.length > 3) {

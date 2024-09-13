@@ -6,7 +6,6 @@ import { useImageContent } from '../../hooks/useImages'
 import TechnicalSheet from './components/TechnicalSheet'
 import TechnicalTeam from './components/TechnicalTeam'
 import styles from './MoviesGallery.module.css'
-import { ImageList, ImageListItem } from '@mui/material'
 import MovieTrailer from './components/MovieTrailer'
 
 const MovieLayout = () => {
@@ -45,6 +44,7 @@ const MovieLayout = () => {
     setStillStillVisible(!stillIsVisible)
     setStill(stillSelected)
   }
+
   console.log(movie)
 
   return (
@@ -78,13 +78,15 @@ const MovieLayout = () => {
         )}
 
         <div className={styles.layout__cast}>
-          <h5>Casting</h5>
           {movie?.cast && movie.cast.length > 0 ? (
-            <ul>
-              {movie.cast.map((cast, i) => (
-                <li key={i}>{cast}</li>
-              ))}
-            </ul>
+            <>
+              <h5>Casting</h5>
+              <ul>
+                {movie.cast.map((cast, i) => (
+                  <li key={i}>{cast}</li>
+                ))}
+              </ul>
+            </>
           ) : (
             <p>No se registra casting </p>
           )}
@@ -92,27 +94,18 @@ const MovieLayout = () => {
       </div>
       {movie.stills?.length > 0 && (
         <div className={styles.layout__stills}>
-          <ImageList
-            sx={{ width: 500, height: 450 }}
-            variant="quilted"
-            cols={4}
-            rowHeight={121}
-          >
-            {movie.stills.map(still => (
-              <ImageListItem key={still.id}>
-                <img
-                  onClick={() => renderStill(still.id)}
-                  src={still.url}
-                />
-              </ImageListItem>
-            ))}
-          </ImageList>
+          {movie.stills.map(still => (
+            <div className={styles.still__container}>
+              <img src={still.url} alt={movie.title} />
+            </div>
+          ))}
         </div>
       )}
 
       <div className={styles.layout__technical}>
         <TechnicalTeam team={movie.technicalTeam} />
       </div>
+
       {stillIsVisible && (
         <div
           className={styles.stillViewer}

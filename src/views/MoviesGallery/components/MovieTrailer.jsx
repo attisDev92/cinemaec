@@ -5,18 +5,16 @@ const MovieTrailer = ({ trailerUrl }) => {
   const [videoId, setVideoId] = useState(null)
 
   useEffect(() => {
-    const getUrlEmbed = () => {
+    const extractVideoId = url => {
       const regexYoutubeId =
         /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/
 
-      const match = trailerUrl.match(regexYoutubeId)
-
-      if (match && match[1]) {
-        setVideoId(match[1])
-      }
+      const match = url.match(regexYoutubeId)
+      return match ? match[1] : null
     }
 
-    getUrlEmbed()
+    const id = extractVideoId(trailerUrl)
+    setVideoId(id)
   }, [trailerUrl])
 
   if (!videoId) return <p>Loading trailer...</p>
@@ -24,14 +22,17 @@ const MovieTrailer = ({ trailerUrl }) => {
   return (
     <div className={styles.layout__trailer}>
       <iframe
-        width="100%"
-        height="100%"
         src={`https://www.youtube.com/embed/${videoId}`}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+        }}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
+        title="YouTube Video Player"
       ></iframe>
     </div>
   )
