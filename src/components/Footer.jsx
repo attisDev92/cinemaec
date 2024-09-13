@@ -30,7 +30,7 @@ const Footer = () => {
       </ul>
       <div className={styles.reference}>
         <a
-          href="/public/assets/downloads/IFCI-DE-2023-0024-R.pdf"
+          href="/assets/downloads/IFCI-DE-2023-0024-R.pdf"
           target="_blank"
         >
           Reglamento Red de Espacios Audiovisuales

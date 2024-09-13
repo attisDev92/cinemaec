@@ -7,6 +7,7 @@ import TechnicalSheet from './components/TechnicalSheet'
 import TechnicalTeam from './components/TechnicalTeam'
 import styles from './MoviesGallery.module.css'
 import MovieTrailer from './components/MovieTrailer'
+import StillsGallery from './components/StillsGallery'
 
 const MovieLayout = () => {
   const { id } = useParams()
@@ -15,9 +16,6 @@ const MovieLayout = () => {
   const [error, setError] = useState(null)
   const poster = useImageContent(movie?.poster.url)
   const banner = useImageContent(movie?.stills[0]?.url)
-  const [stillIsVisible, setStillStillVisible] =
-    useState(false)
-  const [still, setStill] = useState(null)
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -92,28 +90,10 @@ const MovieLayout = () => {
           )}
         </div>
       </div>
-      {movie.stills?.length > 0 && (
-        <div className={styles.layout__stills}>
-          {movie.stills.map(still => (
-            <div className={styles.still__container}>
-              <img src={still.url} alt={movie.title} />
-            </div>
-          ))}
-        </div>
-      )}
-
+      <StillsGallery stills={movie.stills} />
       <div className={styles.layout__technical}>
         <TechnicalTeam team={movie.technicalTeam} />
       </div>
-
-      {stillIsVisible && (
-        <div
-          className={styles.stillViewer}
-          onClick={() => renderStill()}
-        >
-          <img src={still} />
-        </div>
-      )}
     </div>
   )
 }

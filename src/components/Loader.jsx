@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Backdrop, CircularProgress } from '@mui/material'
 
+const style = {
+  display: 'fixed',
+  top: 0,
+  zIndex: 100,
+}
+
 const Loader = ({ isActive }) => {
   const [open, setOpen] = useState(false)
 
@@ -13,7 +19,7 @@ const Loader = ({ isActive }) => {
   }, [isActive])
 
   return (
-    <div>
+    <div style={style}>
       <Backdrop
         sx={{
           color: '#fff',
