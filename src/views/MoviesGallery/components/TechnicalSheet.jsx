@@ -29,18 +29,16 @@ const TechnicalSheet = ({ movie }) => {
             <TableCell> {movie.genre} </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Genero:</TableCell>
-            <TableCell> {movie.genre} </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Sub - genero:</TableCell>
+            <TableCell>Sub-genero:</TableCell>
             <TableCell>
               {movie.sub_genre.join(', ')}
             </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>País:</TableCell>
-            <TableCell>{movie.country}</TableCell>
+            <TableCell>
+              {movie.country.join(', ')}
+            </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Idioma:</TableCell>
