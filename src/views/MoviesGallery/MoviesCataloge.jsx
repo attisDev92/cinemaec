@@ -10,8 +10,8 @@ const MoviesCataloge = () => {
     return <Loader isActive={true} />
   }
 
-  const movies = allMovies.filter(
-    movie => movie.country === 'Ecuador',
+  const movies = allMovies.filter(movie =>
+    movie.country.includes('Ecuador'),
   )
 
   if (movies.length === 0) {
