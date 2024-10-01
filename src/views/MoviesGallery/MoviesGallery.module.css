@@ -234,7 +234,7 @@
 }
 
 .rea__information {
-  padding: 1rem 10%;
+  padding: 3rem 10%;
   background-color: var(--color-primary);
 }
 
@@ -245,7 +245,7 @@
 }
 
 .channels {
-  padding: 2rem 10%;
+  padding: 3rem 10%;
   display: flex;
   flex-flow: row;
   background-color: var(--color-dark);
