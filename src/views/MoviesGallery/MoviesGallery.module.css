@@ -71,6 +71,10 @@
   gap: 1rem;
 }
 
+.movie__storyline {
+  font-size: 12px;
+}
+
 /* movie layout */
 .movie__layout {
   padding-top: 2rem;
@@ -123,17 +127,13 @@
   padding: 2rem;
   width: 50%;
   height: fit-content;
+  font-size: 14px;
   background-color: var(--color-dark);
   box-shadow: 10px 10px 0px var(--color-primary);
 }
 
 .layout__plot p {
   color: var(--color-gray);
-}
-
-.layout__technical {
-  position: relative;
-  padding: 4rem 10%;
 }
 
 .container__trailer__cast {
@@ -219,4 +219,41 @@
   z-index: -1;
   backdrop-filter: blur(3px);
   background-color: rgba(37, 37, 37, 0.595);
+}
+
+.layout__technical {
+  position: relative;
+  padding: 4rem 10%;
+}
+
+.recognitions {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 4rem 10%;
+  gap: 1rem;
+}
+
+.rea__information {
+  padding: 1rem 10%;
+  background-color: var(--color-primary);
+}
+
+.rea__info {
+  font-size: 14px;
+  padding: 1rem;
+  color: var(--color-gray);
+}
+
+.channels {
+  padding: 2rem 10%;
+  display: flex;
+  flex-flow: row;
+  background-color: var(--color-dark);
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.channels p {
+  color: var(--color-gray);
 }

@@ -8,6 +8,18 @@ import TechnicalTeam from './components/TechnicalTeam'
 import styles from './MoviesGallery.module.css'
 import MovieTrailer from './components/MovieTrailer'
 import StillsGallery from './components/StillsGallery'
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Button,
+  Divider,
+  Stack,
+  Typography,
+} from '@mui/material'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import TheatersIcon from '@mui/icons-material/Theaters'
+import dayjs from 'dayjs'
 
 const MovieLayout = () => {
   const { id } = useParams()
@@ -91,6 +103,109 @@ const MovieLayout = () => {
         </div>
       </div>
       <StillsGallery stills={movie.stills} />
+      <div className={styles.recognitions}>
+        {movie.festivals?.length > 0 && (
+          <>
+            <h5>Festivales</h5>
+            <ul>
+              {movie.festivals.map((festival, i) => (
+                <li key={i}>{festival}</li>
+              ))}
+            </ul>
+          </>
+        )}
+        <Divider />
+        {movie.awards?.length > 0 && (
+          <>
+            <h5>Premios y reconocimientos</h5>
+            <ul>
+              {movie.awards.map((award, i) => (
+                <li key={i}>{award}</li>
+              ))}
+            </ul>
+          </>
+        )}
+        <Divider />
+        {movie.funding?.length > 0 && (
+          <>
+            <h5>Financiamiento y fondos recibidos</h5>
+            <ul>
+              {movie.funding.map((award, i) => (
+                <li key={i}>{award}</li>
+              ))}
+            </ul>
+          </>
+        )}
+      </div>
+      {movie.channels && (
+        <div className={styles.channels}>
+          <p>Esta película esta disponible en:</p>
+          {movie.channels.map((channel, i) => (
+            <Button
+              key={i}
+              variant="contained"
+              href={channel.url}
+              target="_blank"
+              startIcon={<TheatersIcon />}
+            >
+              {channel.plataform}
+            </Button>
+          ))}
+        </div>
+      )}
+      {movie.reaInformation?.available && (
+        <div className={styles.rea__information}>
+          <Accordion>
+            <AccordionSummary
+              id="panel-rea"
+              expandIcon={<ExpandMoreIcon />}
+            >
+              <h5>
+                DISPONIBLE PARA LA RED DE ESPACIOS
+                AUDIOVISUALES
+              </h5>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Stack
+                direction="row"
+                spacing={4}
+                divider={
+                  <Divider
+                    orientation="vertical"
+                    flexItem
+                  />
+                }
+              >
+                <Typography>
+                  Disponible para territorio:
+                </Typography>
+                <Typography>
+                  {
+                    <ul>
+                      {movie.reaInformation.territoryLicense.map(
+                        (territory, i) => (
+                          <li key={i}>{territory}</li>
+                        ),
+                      )}
+                    </ul>
+                  }
+                </Typography>
+                <Typography>Fecha de caducidad:</Typography>
+                <Typography>
+                  {dayjs(
+                    movie.reaInformation.expiration,
+                  ).format('DD-MM-YY')}
+                </Typography>
+              </Stack>
+            </AccordionDetails>
+          </Accordion>
+          <p className={styles.rea__info}>
+            Si eres parte de la Red de Espacios
+            Audiovisuales o usuario del Banco de Contenidos
+            puedes programar esta obra.
+          </p>
+        </div>
+      )}
       <div className={styles.layout__technical}>
         <TechnicalTeam team={movie.technicalTeam} />
       </div>

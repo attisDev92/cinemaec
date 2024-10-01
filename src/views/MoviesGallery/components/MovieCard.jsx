@@ -27,7 +27,9 @@ const MovieCard = ({ movie }) => {
           {'|'}
           <p>{movie.runTime}</p>
         </div>
-        <p>{movie.storyLine}</p>
+        <p className={styles.movie__storyline}>
+          {movie.storyLine}
+        </p>
       </div>
       <div className={styles.movie__poster}>
         <img src={poster} alt={`${movie.title}_poster`} />
